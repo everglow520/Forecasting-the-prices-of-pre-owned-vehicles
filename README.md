@@ -9,9 +9,21 @@ We will explore this principle in more detail in a later section.
 We choose the website https://sz.58.com/ershouche/?PGTID=0d30001d-0000-4622-24da-a55ad27728f0&ClickID=57 and crawl the data.
 The below code is the method how we crawl it:
 ```
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
-}
-base_url = 'https://www.che168.com/china/list/#pvareaid=100943/'
-get_page_data(base_url)
+def parse_page(soup):
+     cars = soup.find_all('li', class_='cards-li')
+     for car in cars:
+        try:
+            title = car.find('h4', class_='card-name').get_text(strip=True)
+            price = car.find('span', class_='pirce').get_text(strip=True)
+            str = car.find('p', class_='cards-unit').get_text(strip=True)
+            box = str.split('')
+            mileage = box[0]
+            year = box[1]
+            city = box[2]
+            
+            car_data.append([title, price, mileage, year, city])
+        except AttributeError:
+            continue
 ```
+Then we get 3641 rows and 8 columns data.
+## preprocessing
