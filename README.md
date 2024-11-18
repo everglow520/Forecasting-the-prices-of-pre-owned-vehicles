@@ -27,3 +27,12 @@ def parse_page(soup):
 ```
 Then we get 3641 rows and 8 columns data.
 ## preprocessing
+In this project,we mainly use **one-hot encoder** and **standard scaler** to preprocessing our data to make it more comprehendible for the computer.
+And what is it? Why we use it?
+The reason is that the computer can't comprehend the data we crwal directly.We must convert it to computer language.
+### one-hot encoder
+One-hot encoding, also known as one-bit effective encoding, mainly uses N-bit status registers to encode N states, each state is composed of its own independent register bits, and only One bit is valid at any time.
+It is a representation of categorical variables as binary vectors. This first requires mapping class values to integer values. Each integer value is then represented as a binary vector that is zero except for the index of the integer, which is labeled 1.
+
+
+
