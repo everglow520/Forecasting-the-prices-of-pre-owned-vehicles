@@ -26,11 +26,11 @@ def parse_page(soup):
             continue
 ```
 Then we get 3641 rows and 8 columns data.
-## preprocessing
+## Preprocessing
 In this project,we mainly use **one-hot encoder** and **standard scaler** to preprocessing our data to make it more comprehendible for the computer.
 And what is it? Why we use it?
 The reason is that the computer can't comprehend the data we crwal directly.We must convert it to computer language.
-### onehotencoder
+### Onehotencoder
 One-hot encoding, also known as one-bit effective encoding, mainly uses N-bit status registers to encode N states, each state is composed of its own independent register bits, and only One bit is valid at any time.  
 It is a representation of categorical variables as binary vectors. This first requires mapping class values to integer values. Each integer value is then represented as a binary vector that is zero except for the index of the integer, which is labeled 1.  
 Unique thermal coding is because most algorithms are calculated based on the metric in the vector space, in order to make the values of variables that are not partial ordered, and are equidistant to the circle point. Using one-hot coding, the value of discrete feature is extended to Euclidean space, and a value of discrete feature corresponds to a point in Euclidean space. Using one-hot encoding for discrete features makes the distance between features more reasonable. After the discrete features are one-hot encoded, the encoded features, in fact, can be regarded as continuous features in each dimension. Each dimension can be normalized in the same way as the normalization method for continuous features. For example, normalization to [-1,1] or normalization to mean 0 and variance 1.  
@@ -43,7 +43,7 @@ print(categorical_scaler)
 The result is below:
 ![254ff9f5492fb32c424f1219be13ea1](https://github.com/user-attachments/assets/468c41f3-5fde-487d-af8d-e9d16ab50c90)
 
-### stardardscaler
+### Standardscaler
 In machine learning, data preprocessing is a crucial step. StandardScaler is a class in the sklearn.preprocessing module that is used to standardize data processing. Standardization is the process of scaling features to a given range (usually mean 0, standard deviation 1), StandardScaler achieves this transformation by calculating the mean and standard deviation of feature columns, it is a common technique in data preprocessing, and is crucial to the performance improvement of many machine learning algorithms.  
 The main benefits of standardization include, but are not limited to:  
   1.Improve model performance: Many machine learning algorithms, especially those based on distance (such as K-nearest neighbors, support vector machines, etc.) and algorithms that need to compute covariance matrices (such as PCA, linear regression, etc.), will perform better when the input data has the same scale. Standardized processing can help these algorithms achieve better performance.  
